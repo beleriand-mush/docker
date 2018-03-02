@@ -1,0 +1,25 @@
+#!/bin/bash
+
+VERSION=$1
+if [[ -z "$VERSION" ]]; then
+        echo 'ERROR: Missing version parameter (e.g., 1.8.6-p2)'
+        exit 127
+fi
+
+mkdir -p $VERSION
+cd $VERSION
+
+# if [[ ! -e data ]]; then
+#   cp -rv ../Beleriand-Files/data .
+# fi
+
+# if [[ ! -e log ]]; then
+#   cp -rv ../Beleriand-Files/log .
+# fi
+
+docker run \
+  -it \
+  -p 4739:4739 \
+  -v `pwd`/data:/mush/pennmush/game/data \
+  -v `pwd`/log:/mush/pennmush/game/log \
+  beleriand-mush:$VERSION

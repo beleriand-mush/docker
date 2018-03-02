@@ -1,0 +1,15 @@
+#!/bin/bash
+VERSION=$1
+if [[ -z "$VERSION" ]]; then
+        echo 'ERROR: Missing version parameter (e.g., 1.8.6-p2)'
+        exit 127
+fi
+
+./bin/build-pennmush-image $VERSION
+
+mkdir -p docker-files/BeleriandMUSH-$VERSION
+cp -r Beleriand-Files docker-files/BeleriandMUSH-$VERSION/
+
+docker build -t beleriand-mush:$VERSION docker-files/BeleriandMUSH-$VERSION
+
+rm -rf docker-files/BeleriandMUSH-$VERSION/Beleriand-Files

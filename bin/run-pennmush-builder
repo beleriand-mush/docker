@@ -1,0 +1,6 @@
+#!/bin/bash
+
+docker run \
+  -it \
+  -v `pwd`/pennmush-dist:/mush/pennmush/dist \
+  pennmush-builder:1.8.6-p2

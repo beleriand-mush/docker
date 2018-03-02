@@ -1,0 +1,16 @@
+#!/bin/bash
+#
+(echo "connect `cat ~/.mush/shutdown-user` `cat ~/.mush/shutdown-password`"; sleep 1 ; echo "_shutdown" ; echo ; sleep 1) | \
+telnet localhost 4739
+
+CONTAINER_ID=`docker ps|grep beleriand-mush|awk '{print $1}'`
+
+if [[ -z $CONTAINER_ID ]]; then
+  echo "ERROR: couldn't identify the beleriand-mush docker container."
+  exit 127
+fi
+
+docker exec \
+  -it \
+  $CONTAINER_ID \
+  killall tail
