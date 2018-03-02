@@ -9,17 +9,17 @@ fi
 mkdir -p $VERSION
 cd $VERSION
 
-# if [[ ! -e data ]]; then
-#   cp -rv ../Beleriand-Files/data .
-# fi
+if [[ ! -e data ]]; then
+  cp -rv ../../Beleriand-Files/data .
+fi
 
-# if [[ ! -e log ]]; then
-#   cp -rv ../Beleriand-Files/log .
-# fi
+if [[ ! -e log ]]; then
+  cp -rv ../../Beleriand-Files/log .
+fi
 
 docker run \
   -it \
   -p 4739:4739 \
-  -v `pwd`/data:/mush/pennmush/game/data \
-  -v `pwd`/log:/mush/pennmush/game/log \
+  -v `pwd`/data:/mush/beleriand/data \
+  -v `pwd`/log:/mush/beleriand/log \
   beleriand-mush:$VERSION

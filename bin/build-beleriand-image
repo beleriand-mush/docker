@@ -7,9 +7,9 @@ fi
 
 ./bin/build-pennmush-image $VERSION
 
-mkdir -p docker-files/BeleriandMUSH-$VERSION
-cp -r Beleriand-Files docker-files/BeleriandMUSH-$VERSION/
+mkdir -p dockerfiles/BeleriandMUSH-$VERSION
+cp -r ../Beleriand-Files dockerfiles/BeleriandMUSH-$VERSION/
 
-docker build -t beleriand-mush:$VERSION docker-files/BeleriandMUSH-$VERSION
+docker build -t beleriand-mush:$VERSION dockerfiles/BeleriandMUSH-$VERSION
 
-rm -rf docker-files/BeleriandMUSH-$VERSION/Beleriand-Files
+rm -rf dockerfiles/BeleriandMUSH-$VERSION/Beleriand-Files
