@@ -1,2 +1,2 @@
 #!/bin/bash
-docker build -t pennmush-builder:1.8.6-p2 docker-files/PennMUSHBuilder
+docker build -t pennmush-builder:1.8.6-p2 dockerfiles/PennMUSHBuilder

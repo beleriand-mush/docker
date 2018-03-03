@@ -2,8 +2,8 @@
 
 VERSION=$1
 if [[ -z "$VERSION" ]]; then
-	echo 'ERROR: Missing version parameter (e.g., 1.8.6-p2)'
-	exit 127
+        echo 'ERROR: Missing version parameter (e.g., 1.8.6-p2)'
+        exit 127
 fi
-docker build -t pennmush-base:latest docker-files/PennMUSH-base
-docker build -t pennmush:$VERSION docker-files/PennMUSH-$VERSION
+docker build -t pennmush-base:latest dockerfiles/PennMUSH-base
+docker build -t pennmush:$VERSION dockerfiles/PennMUSH-$VERSION
