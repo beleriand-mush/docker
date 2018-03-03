@@ -1,3 +1,5 @@
 #!/bin/bash
 
-scp -r middleearth.net:Beleriand Beleriand-Files
+# Update your ~/.ssh/config with an entry for middleearth
+mkdir -p Beleriand-Files
+scp -r middleearth:Beleriand/* Beleriand-Files/
