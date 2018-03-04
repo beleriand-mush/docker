@@ -13,3 +13,11 @@ RUN apt-get install -y \
     libpcre3 libpcre3-dev \
     libevent-2.0-5 libevent-dev libevent-openssl-2.0-5 \
     libboost-dev libboost-iostreams-dev libboost-program-options-dev
+RUN useradd -ms /bin/bash bele && \
+        mkdir -p /etc/sudoers.d && \
+        echo "user ALL=(root) NOPASSWD:ALL" > /etc/sudoers.d/bele && \
+        chmod 0440 /etc/sudoers.d/bele && \
+        mkdir -p /mush && \
+        chown -R bele /mush
+
+USER bele
