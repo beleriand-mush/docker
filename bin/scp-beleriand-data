@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# Update your ~/.ssh/config with an entry for middleearth
+mkdir -p Beleriand-Files/game/data
+scp -r middleearth:Beleriand/game/data/* Beleriand-Files/game/data
