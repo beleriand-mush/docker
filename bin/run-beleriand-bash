@@ -20,7 +20,7 @@ fi
 docker run \
   -it \
   -p 4739:4739 \
-  -v `pwd`/data:/root/Beleriand/game/data \
-  -v `pwd`/log:/root/Beleriand/game/log \
+  -v `pwd`/data:/home/bele/Beleriand/game/data \
+  -v `pwd`/log:/home/bele/Beleriand/game/log \
   beleriand-mush:$VERSION \
   bash
